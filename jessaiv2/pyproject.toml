@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jess-ai"
+version = "1.0.0"
+description = "Professional AI Assistant with Twilio Integration"
+authors = [{name = "Your Name", email = "your@email.com"}]
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+dependencies = [
+    "Flask==2.3.2",
+    "twilio==8.3.0",
+    "openai==0.27.8",
+    "python-dotenv==1.0.0",
+    "gunicorn==20.1.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==7.4.0",
+    "black==23.7.0"
+]
+
+[project.scripts]
+jess-ai = "app:main"
+
+[tool.setuptools.packages.find]
+where = ["jessaiv2"]  # Key change - points to your package
+include = ["*"]
