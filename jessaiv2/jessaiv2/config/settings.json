@@ -1,0 +1,17 @@
+{
+  "system_prompt": "You are Jess, a professional AI assistant.",
+  "ai_config": {
+    "provider": "openrouter",
+    "api_base": "https://openrouter.ai/api/v1",
+    "default_model": "anthropic/claude-3-haiku",
+    "fallback_model": "anthropic/claude-3-sonnet",
+    "max_tokens": 1500,
+    "temperature": 0.7,
+    "max_retries": 3
+  },
+  "twilio_config": {
+    "allowed_numbers": ["+60183420125"],
+    "rate_limit": 10,
+    "rate_limit_window": 60
+  }
+}
