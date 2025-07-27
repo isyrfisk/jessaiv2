@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+jessaiv2/config/__init__.py
+jessaiv2/config/config_manager.py
+jessaiv2/core/__init__.py
+jessaiv2/core/assistant.py
+jessaiv2/core/twilio_handler.py
+jessaiv2/core/utilities.py
+jessaiv2/data/__init__.py
+jessaiv2/jessaiv2.egg-info/PKG-INFO
+jessaiv2/jessaiv2.egg-info/SOURCES.txt
+jessaiv2/jessaiv2.egg-info/dependency_links.txt
+jessaiv2/jessaiv2.egg-info/top_level.txt
+jessaiv2/tests/__init__.py
+jessaiv2/tests/test_twilio_handler.py

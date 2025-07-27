@@ -1,14 +1,23 @@
-# /workspaces/jessaiv2/jessaiv2/core/twilio_handler.py
-from twilio.rest import Client
+import os
+from dotenv import load_dotenv
+from core.twilio_handler import TwilioHandler
 
-class TwilioHandler:
-    def __init__(self, config):
-        self.client = Client(config['twilio_account_sid'], config['twilio_auth_token'])
-        self.phone_number = config['twilio_phone_number']
-    
-    def send_message(self, to, body):
-        return self.client.messages.create(
-            body=body,
-            from_=self.phone_number,
-            to=to
-        )
+# Load environment variables from .env
+load_dotenv()
+
+config = {
+    "twilio_account_sid": os.getenv("TWILIO_ACCOUNT_SID"),
+    "twilio_auth_token": os.getenv("TWILIO_AUTH_TOKEN"),
+    "twilio_phone_number": os.getenv("TWILIO_PHONE_NUMBER"),
+    "allowed_phone_numbers": [os.getenv("TWILIO_PHONE_NUMBER")],  # or your recipient
+    "message_rate_limit": 10
+}
+
+handler = TwilioHandler(config)
+
+# Replace with the recipient's real phone number
+to_number = "+60183420125"  # Example: your own number for testing
+message = "Hello from your real Twilio API call!"
+
+result = handler.send_message(to_number, message)
+print("Message sent! SID:", result.sid)
